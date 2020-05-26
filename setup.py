@@ -51,8 +51,7 @@ setup(
         "jsonschema >=3.0.0, ==3.*",
         "packaging >=19.2",
         "pandas >=1.0.0, ==1.*",
-        "phylo-treetime >=0.7.4, ==0.7.*",
-        "snakemake >=5.4.0, <5.11"
+        "phylo-treetime >=0.7.4, ==0.7.*"
     ],
     extras_require = {
         'full': [
