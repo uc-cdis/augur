@@ -349,10 +349,16 @@
                             "$comment": "terminal nodes only",
                             "type": "string",
                             "pattern": "^[0-9A-Za-z-_]+$"
+                        },
+                        "guid":{
+                            "description": "Global unique id",
+                            "$comment": "terminal nodes only",
+                            "type": "string",
+                            "pattern": "^.*+$"
                         }
                     },
                     "patternProperties": {
-                        "(?!div|num_date|vaccine|hidden|url|author|accession)(^.+$)": {
+                        "(?!div|num_date|vaccine|hidden|url|author|accession|guid)(^.+$)": {
                             "description": "coloring / geo resolution information attached to this node",
                             "$comment": "property name must match the `key` property provided as a coloring / geo_resolution",
                             "$comment": "JSON schema defined properties must also validate agaisnt patternProperties if they match. Hence the complex regex.",
