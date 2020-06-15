@@ -559,6 +559,11 @@ def set_node_attrs_on_tree(data_json, node_attrs):
             if is_valid(raw_data.get(prop, None)):
                 node["node_attrs"][prop] = str(raw_data[prop])
 
+    def _transfer_guid(node, raw_data):
+        for prop in ["guid"]:
+            if is_valid(raw_data.get(prop, None)):
+                node["node_attrs"][prop] = str(raw_data[prop])
+
     def _transfer_colorings_filters(node, raw_data):
         trait_keys = set() # order we add to the node_attrs is not important for auspice
         if "colorings" in data_json["meta"]:
@@ -589,6 +594,7 @@ def set_node_attrs_on_tree(data_json, node_attrs):
         _transfer_hidden_flag(node, raw_data)
         _transfer_num_date(node, raw_data)
         _transfer_url_accession(node, raw_data)
+        _transfer_guid(node,raw_data)
         _transfer_author_data(node)
         # transfer colorings & filters, including entropy & confidence if available
         _transfer_colorings_filters(node, raw_data)
