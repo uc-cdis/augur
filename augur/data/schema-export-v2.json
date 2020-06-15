@@ -353,8 +353,7 @@
                         "guid":{
                             "description": "Global unique id",
                             "$comment": "terminal nodes only",
-                            "type": "string",
-                            "pattern": "^.*+$"
+                            "type": "string"
                         }
                     },
                     "patternProperties": {
