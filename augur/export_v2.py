@@ -6,9 +6,9 @@ import sys
 import time
 import warnings
 from collections import defaultdict
-from pathlib import Path
 
 from Bio import Phylo
+from pathlib import Path
 
 from .utils import read_metadata, read_node_data, write_json, read_config, read_lat_longs, read_colors
 from .validate import export_v2 as validate_v2, auspice_config_v2 as validate_auspice_config_v2, ValidateError
@@ -602,6 +602,11 @@ def set_node_attrs_on_tree(data_json, node_attrs):
             if is_valid(raw_data.get(prop, None)):
                 node["node_attrs"][prop] = str(raw_data[prop])
 
+    def _transfer_md5sum(node, raw_data):
+        for prop in ["md5sum"]:
+            if is_valid(raw_data.get(prop, None)):
+                node["node_attrs"][prop] = str(raw_data[prop])
+
     def _transfer_colorings_filters(node, raw_data):
         trait_keys = set()  # order we add to the node_attrs is not important for auspice
         if "colorings" in data_json["meta"]:
@@ -633,6 +638,7 @@ def set_node_attrs_on_tree(data_json, node_attrs):
         _transfer_num_date(node, raw_data)
         _transfer_url_accession(node, raw_data)
         _transfer_guid(node, raw_data)
+        _transfer_md5sum(node, raw_data)
         _transfer_author_data(node)
         # transfer colorings & filters, including entropy & confidence if available
         _transfer_colorings_filters(node, raw_data)
