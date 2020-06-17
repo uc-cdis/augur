@@ -27,7 +27,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1ebb37bc-d89f-4b93-bc36-4b4f6b4c2be8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/augur/data/schema-export-v2.json" beforeDir="false" afterPath="$PROJECT_DIR$/augur/data/schema-export-v2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

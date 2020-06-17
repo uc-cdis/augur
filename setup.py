@@ -1,4 +1,4 @@
-from pathlib    import Path
+from pathlib import Path
 from setuptools import setup
 import sys
 
@@ -23,38 +23,38 @@ with version_file.open() as f:
     exec(f.read())
 
 # Get the long description from the README file
-with readme_file.open(encoding = "utf-8") as f:
+with readme_file.open(encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-    name = "nextstrain-augur",
-    version = __version__,
-    author = "Nextstrain developers",
-    author_email = "trevor@bedford.io, richard.neher@unibas.ch",
-    description = "A bioinformatics toolkit for phylogenetic analysis",
-    long_description = long_description,
-    long_description_content_type = "text/markdown",
-    keywords = "nextstrain, molecular epidemiology",
-    url = "https://github.com/nextstrain/augur",
-    project_urls = {
+    name="nextstrain-augur",
+    version=__version__,
+    author="Nextstrain developers",
+    author_email="trevor@bedford.io, richard.neher@unibas.ch",
+    description="A bioinformatics toolkit for phylogenetic analysis",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    keywords="nextstrain, molecular epidemiology",
+    url="https://github.com/nextstrain/augur",
+    project_urls={
         "Bug Reports": "https://github.com/nextstrain/augur/issues",
         "Change Log": "https://github.com/nextstrain/augur/blob/master/CHANGES.md#next",
         "Source": "https://github.com/nextstrain/augur",
     },
-    packages = ['augur'],
-    package_data = {'augur': ['data/*']},
-    data_files = [("", ["LICENSE.txt"])],
-    python_requires = '>={}'.format('.'.join(str(n) for n in min_version)),
-    install_requires = [
+    packages=['augur'],
+    package_data={'augur': ['data/*']},
+    data_files=[("", ["LICENSE.txt"])],
+    python_requires='>={}'.format('.'.join(str(n) for n in min_version)),
+    install_requires=[
         "bcbio-gff >=0.6.0, ==0.6.*",
         "biopython >=1.67, ==1.*",
         "jsonschema >=3.0.0, ==3.*",
         "packaging >=19.2",
         "pandas >=1.0.0, ==1.*",
         "phylo-treetime >=0.7.4, ==0.7.*",
-        "snakemake >=5.4.0, <5.11"
+        "snakemake >=5.4.0, <5.11",
     ],
-    extras_require = {
+    extras_require={
         'full': [
             "cvxopt >=1.1.9, ==1.1.*",
             "matplotlib >=2.0, ==2.*",
@@ -77,7 +77,7 @@ setup(
             "ipdb >=0.10.1, ==0.*"
         ]
     },
-    classifiers = [
+    classifiers=[
         "Development Status :: 3 - Alpha",
         "Topic :: Scientific/Engineering :: Bio-Informatics",
         "License :: OSI Approved :: GNU Affero General Public License v3",
@@ -90,7 +90,7 @@ setup(
     ],
     # Install an "augur" program which calls augur.__main__.main()
     #   https://setuptools.readthedocs.io/en/latest/setuptools.html#automatic-script-creation
-    entry_points = {
+    entry_points={
         "console_scripts": [
             "augur = augur.__main__:main",
         ]
