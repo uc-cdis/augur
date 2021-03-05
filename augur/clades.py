@@ -68,6 +68,7 @@ def is_node_in_clade(clade_alleles, node, ref):
         if gene in node.sequences and pos in node.sequences[gene]:
             state = node.sequences[gene][pos]
         elif ref and gene in ref:
+            pos = int(pos)
             state = ref[gene][pos]
         else:
             state = ''
